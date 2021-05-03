@@ -1,16 +1,27 @@
 import math
-from equationcontrols.separateValues import separate
+import python.functionalcalc.equationcontrols.separateValues
+#import separateValues
 
-def firstGrade():
+def firstDegree(equ):
+    a,b = separateFirstDegree(equ)
+    x = (-b)/a
+    print("Il risultato di x è "+x)
 
-def secondGrade():
+def secondDegree(equ):
+    a,b,c = separateSecondDegree(equ)
+    if(checkDelta(a,b,c)):
+        n = Equation(a,b,c)
+        if(len(n) == 1):
+            print('Il risultato di x1 e x2 è '+str(n[0]))
+        else:
+            print('Il risultato di x1 è {} e x2 è {}'.format(n[0],n[1]))
+    else:
+        print("Calcolo impossibile")
 
-def checkEqu(equ):  # check equation 
-    x2 = equ.find("x^2")
-    x1 = equ.find("x")
-    if(x2 != -1):
+def checkDegree(equ):  # check equation degree
+    if(equ.contains('x^2')):
         n = 2
-    elif(x2 == 1 and x1 !=-1):
+    elif(equ.contains('x')):
         n = 1
     else:
         n = 0
@@ -36,26 +47,12 @@ def Equation(a,b,c):
         n.append(n2)
     return n
 
-def calcEqu2(equ):
-    a,b,c = separate(equ)
-    if(checkDelta(a,b,c)):
-        n = Equation(a,b,c)
-        print("n length = "+str(len(n)))
-        if(len(n)==1):
-            
-            print("Il risultato di x1 e x2 è "+str(n[0]))
-        else:
-            print("Il risultato di x1 è "+str(n[0])+" e x2 è "+str(n[1]))
-    else:
-        print("Calcolo impossibile")
-
 scelta = "1"
-print("Il programma funziona con valori minori di 100 e con equazioni di grado massimo 2")
 while(scelta != "si"):
-    print("² = ^2")
+    print("\nNo space and comma to separate values\nequation format example: -x^2,+3x,-2")
     equ = input("Inserire equazione : ")
-    if(checkEqu(equ)==1):
-        calcEqu(equ)
-    else(checkEqu(equ)==2):
-        calcEqu2(equ)
+    if(checkDegree(equ)==1):
+        firstDegree(equ)
+    elif(checkDegree(equ)==2):
+        secondDegree(equ)
     scelta = input("Vuoi uscire? (si/no): ")
