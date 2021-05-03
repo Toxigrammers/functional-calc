@@ -1,13 +1,40 @@
-import equationresolver
-
-#######
+####### second degree
 # 1) -3x^2,+2x,-3
 # 2) -3x^2,+2x
 # 3) -3x^2,-3
 # 4) -3x^2
-#######
+####### first degree
+# 1) +2x,-3
+# 2) +2x
 
-def separate(equ):
+def separateFirstDegree(equ):
+    split_equ = equ.split(',')
+    for i in range(len(split_equ)):
+        print(split_equ[i], end="\n")
+    a = b = 0
+    if(len(split_equ) == 2):
+        n1 = split_equ[0]
+        n2 = split_equ[1]
+        pos = n1.find('x')
+        if(pos == 0):  # +1 is implied
+            a = 1
+        elif(n1[pos-1] == '-'):  # -1 is implied
+            a = -1
+        else:
+            a = int(n1[:pos])
+        b = int(n2)
+    elif(len(split_equ) == 1):
+        n1 = split_equ[0]
+        pos = n1.find('x')
+        if(pos == 0):  # +1 is implied
+            a = 1
+        elif(n1[pos-1] == '-'):  # -1 is implied
+            a = -1
+        else:
+            a = int(n1[:pos])
+    return a,b
+
+def separateSecondDegree(equ):
     split_equ = equ.split(',')
     for i in range(len(split_equ)):
         print(split_equ[i], end="\n")
@@ -51,10 +78,17 @@ def separate(equ):
                 b = int(n2[:pos])
         else:
             c = int(split_equ[1])
-    else:
+    elif(len(split_equ) == 1):
         a = int(split_equ[0])
     return a,b,c
 
+str = input("eqauzione 1° o 2° grado? ")
 n = input("Inserire equazione: ")
-a,b,c = separate(n)
-print("a = {}, b = {}, c = {}".format(a,b,c))
+if(str == "2"):
+    a,b,c = separateSecondDegree(n)
+    print("a = {}, b = {}, c = {}".format(a,b,c))
+elif(str == "1"):
+    a,b = separateFirstDegree(n)
+    print("a = {}, b = {}".format(a,b))
+else:
+    print("Equazione non di 1° o 2° grado")
