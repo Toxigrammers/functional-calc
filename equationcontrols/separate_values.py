@@ -77,14 +77,3 @@ def separate_second_degree(equ):
     elif len(split_equ) == 1:
         a = int(split_equ[0])
     return a,b,c
-
-# str = input("eqauzione 1° o 2° grado? ")
-# n = input("Inserire equazione: ")
-# if str == "2":
-#     a,b,c = separate_second_degree(n)
-#     print("a = {}, b = {}, c = {}".format(a,b,c))
-# elif str == "1":
-#     a,b = separate_first_degree(n)
-#     print("a = {}, b = {}".format(a,b))
-# else:
-#     print("Equazione non di 1° o 2° grado")

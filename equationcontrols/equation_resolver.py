@@ -45,10 +45,3 @@ def solve_equation(equ):
         return first_degree(equ)
     elif check_degree(equ)==2:
         return second_degree(equ)
-
-# scelta = "1"
-# while(scelta != "si"):
-#     print("\nNo space and comma to separate values\nequation format example: -x^2,+3x,-2")
-#     equ = input("Inserire equazione : ")
-#     solve_equation(equ)
-#     scelta = input("Vuoi uscire? (si/no): ")
