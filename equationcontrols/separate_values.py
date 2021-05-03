@@ -1,13 +1,13 @@
-####### second degree
+#    second degree
 # 1) -3x^2,+2x,-3
 # 2) -3x^2,+2x
 # 3) -3x^2,-3
 # 4) -3x^2
-####### first degree
+#    first degree
 # 1) +2x,-3
 # 2) +2x
 
-def separateFirstDegree(equ):
+def separate_first_degree(equ):
     split_equ = equ.split(',')
     a = b = 0
     if len(split_equ) == 2:
@@ -32,7 +32,7 @@ def separateFirstDegree(equ):
             a = int(n1[:pos])
     return a,b
 
-def separateSecondDegree(equ):
+def separate_second_degree(equ):
     split_equ = equ.split(',')
     a = b = c = 0
     if len(split_equ) == 3:
@@ -78,13 +78,13 @@ def separateSecondDegree(equ):
         a = int(split_equ[0])
     return a,b,c
 
-str = input("eqauzione 1° o 2° grado? ")
-n = input("Inserire equazione: ")
-if str == "2":
-    a,b,c = separateSecondDegree(n)
-    print("a = {}, b = {}, c = {}".format(a,b,c))
-elif str == "1":
-    a,b = separateFirstDegree(n)
-    print("a = {}, b = {}".format(a,b))
-else:
-    print("Equazione non di 1° o 2° grado")
+# str = input("eqauzione 1° o 2° grado? ")
+# n = input("Inserire equazione: ")
+# if str == "2":
+#     a,b,c = separate_second_degree(n)
+#     print("a = {}, b = {}, c = {}".format(a,b,c))
+# elif str == "1":
+#     a,b = separate_first_degree(n)
+#     print("a = {}, b = {}".format(a,b))
+# else:
+#     print("Equazione non di 1° o 2° grado")

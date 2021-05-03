@@ -2,9 +2,9 @@ from equationcontrols import separateValues
 
 dominio = [], num = [], den = []
 
-def Dominio(x2):
+def domain(x2):
     print("\nCalcolo dominio:")
-    sol = solveEquation(x2)
+    sol = solve_equation(x2)
     check = True
     if sol == False: # Impossibile
         check = False
@@ -15,9 +15,9 @@ def Dominio(x2):
             print("\nx diverso da: "+str(dominio[i]))
     return check
 
-def Num(x1):
+def numerator(x1):
     print("\nCalcolo numeratore:")
-    sol = solveEquation(x1)
+    sol = solve_equation(x1)
     check = True
     if sol == False: # Impossibile
         print("Calcolo Impossibile")
@@ -27,9 +27,9 @@ def Num(x1):
         for i in range(len(num)):
             print("\n"+str(num[i]))
 
-def Den(x2):
+def denominator(x2):
     print("\nCalcolo denominatore:")
-    sol = solveEquation(x2)
+    sol = solve_equation(x2)
     check = True
     if sol == False: # Impossibile
         print("Calcolo Impossibile")
@@ -39,8 +39,8 @@ def Den(x2):
         for i in range(len(den)):
             print("\n"+str(den[i]))
 
-def rationalFunction(x1, x2):
+def rational_function(x1, x2):
     # inserire funzioni controllo impossibile
-    if Dominio(x2) == True:  # se il dominio non è impossibile
-        Num(x1)
-        Den(x2)
+    if domain(x2) == True:  # se il dominio non è impossibile
+        numerator(x1)
+        denominator(x2)

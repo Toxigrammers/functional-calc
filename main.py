@@ -1,4 +1,4 @@
-from python.functionalcalc.equationcontrols.equationresolver import solveEquation
+from equationcontrols.equation_resolver import solve_equation
 import functiontype
 import equationcontrols
 
@@ -11,7 +11,7 @@ while True:
     if choice == 1:
         print("\nNon usare spazi e usa la virgola per separare i valori\nEsempio di equazione: -x^2,+3x,-2")
         equ = input("Inserire equazione: ")
-        sol = solveEquation(equ)
+        sol = solve_equation(equ)
         if sol != False:
             if len(sol) == 1: # 1° grado
                 print("Il valore dell'equazione è:\nx = "+str(sol[0]))
@@ -21,4 +21,4 @@ while True:
         print("\nNon usare spazi e usa la virgola per separare i valori\nEsempio di equazione: -x^2,+3x,-2")
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
-        rationalFunction(x1, x2)
+        rational_function(x1, x2)
