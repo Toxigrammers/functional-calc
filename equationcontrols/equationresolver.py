@@ -1,8 +1,11 @@
 import math
+from equationcontrols.separateValues import separate
 
 def firstGrade():
 
-def checkEqu(equ):
+def secondGrade():
+
+def checkEqu(equ):  # check equation 
     x2 = equ.find("x^2")
     x1 = equ.find("x")
     if(x2 != -1):
@@ -13,20 +16,7 @@ def checkEqu(equ):
         n = 0
     return n
 
-def SeparateEqu(equ):
-    x2 = equ.find("x^2")
-    if(x2 != -1):
-        if(x2 == 0):          # check if the position of x^2 is the first in the equation so the first value is implied
-            a = 1
-        elif(equ[0] != "-"):  # check if the first character of equ is not - so the first value isn't negative
-            
-    else:
-        a = 0
-
-def calcEqu(equ):
-    a,b = SeparateEqu(equ)
-
-def checkDelta(a,b,c):
+def checkDelta(a,b,c):  # check if delta is less than 0
     check = False
     delta = (b*b)-(4*a*c)
     if(delta>=0):
@@ -47,8 +37,7 @@ def Equation(a,b,c):
     return n
 
 def calcEqu2(equ):
-    a,b,c = SeparateEqu(equ)
-    printvalue(a,b,c)
+    a,b,c = separate(equ)
     if(checkDelta(a,b,c)):
         n = Equation(a,b,c)
         print("n length = "+str(len(n)))
