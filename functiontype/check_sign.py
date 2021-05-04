@@ -1,13 +1,3 @@
-####
-# x^2 -3x > 0
-# x1 = 0 | x2 = 3
-# [-∞;0]V[3;+∞]
-# [[-9999,0],[3,9999]]
-####
-# 2x -6 > 0
-# x1 = 3
-# [3;+∞]
-# [3;9999]
 from equationcontrols.equation_resolver import solve_equation, check_degree
 
 

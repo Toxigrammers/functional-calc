@@ -1,5 +1,5 @@
 from equationcontrols import equation_resolver
-from functiontype.check_sign import get_existance, print_existance, print_sign
+from functiontype.check_sign import print_existance, print_sign
 
 dominio = [0]
 num = [0]
@@ -23,7 +23,7 @@ def domain(x2):
 def numerator(x1):
     print("\nCalcolo numeratore:")
     sol = equation_resolver.solve_equation(x1)
-    if sol != False:
+    if sol:
         equation_resolver.print_value(x1)
         print("\nValori esistenza:")
         print_existance(x1)
@@ -32,7 +32,7 @@ def numerator(x1):
 def denominator(x2):
     print("\nCalcolo denominatore:")
     sol = equation_resolver.solve_equation(x2)
-    if sol != False:
+    if sol:
         equation_resolver.print_value(x2)
         print("\nValori esistenza:")
         print_existance(x2)
