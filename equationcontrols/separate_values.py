@@ -8,7 +8,7 @@
 # 2) +2x
 
 def separate_first_degree(equ):
-    split_equ = equ.split(',')
+    split_equ = equ.split(' ')
     a = b = 0
     if len(split_equ) == 2:
         n1 = split_equ[0]
@@ -33,7 +33,7 @@ def separate_first_degree(equ):
     return a,b
 
 def separate_second_degree(equ):
-    split_equ = equ.split(',')
+    split_equ = equ.split(' ')
     a = b = c = 0
     if len(split_equ) == 3:
         n1 = split_equ[0]  # x^2  a

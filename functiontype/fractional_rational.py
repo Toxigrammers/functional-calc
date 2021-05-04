@@ -1,6 +1,10 @@
 from equationcontrols import equation_resolver
-dominio = [], num = [], den = []
+from functiontype.check_sign import get_existance, print_value
+from equationcontrols.equation_resolver import solve_equation
 
+dominio = [0]
+num = [0]
+den = [0]
 def domain(x2):
     print("\nCalcolo dominio:")
     sol = solve_equation(x2)
@@ -18,19 +22,15 @@ def numerator(x1):
     print("\nCalcolo numeratore:")
     sol = solve_equation(x1)
     if sol != False: 
-        num = sol
-        print("Valori del numeratore:")
-        for i in range(len(num)):
-            print("\n"+str(num[i]))
+        num = get_existance(x1)
+        print_value(x1)
 
 def denominator(x2):
     print("\nCalcolo denominatore:")
     sol = solve_equation(x2)
     if sol != False:
-        den = sol
-        print("Valori del denominatore:")
-        for i in range(len(den)):
-            print("\n"+str(den[i]))
+        num = get_existance(x2)
+        print_value(x2)
 
 def rational_function(x1, x2):
     # inserire funzioni controllo impossibile
