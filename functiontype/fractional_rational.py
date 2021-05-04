@@ -23,7 +23,6 @@ def numerator(x1):
     if sol != False: 
         equation_resolver.print_value(x1)
         print("\nValori esistenza:")
-        num = get_existance(x1)
         print_existance(x1)
 
 def denominator(x2):
@@ -32,7 +31,6 @@ def denominator(x2):
     if sol != False:
         equation_resolver.print_value(x2)
         print("\nValori esistenza:")
-        num = get_existance(x2)
         print_existance(x2)
 
 def rational_function(x1, x2):
@@ -40,3 +38,4 @@ def rational_function(x1, x2):
     if domain(x2) == True:  # se il dominio non è impossibile
         numerator(x1)
         denominator(x2)
+        print_sign(x1,x2)

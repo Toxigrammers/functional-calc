@@ -54,3 +54,10 @@ def get_existance(equ):
         return first_degree_values(equ)
     else:
         return second_degree_values(equ)
+    
+def check_sign(sign1, sign2):
+    True
+def print_sign(num, den):
+    num_exist = get_existance(num)
+    den_exist = get_existance(den)
+    
