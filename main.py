@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
 
