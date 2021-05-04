@@ -3,10 +3,20 @@ from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
 
 dom = [1, 2, [3, 2], [2]]
+print("""
+ /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
+| $$_____/                         | $$   |__/                        | $$__  $$                          | $$                           
+| $$   /$$   /$$/$$$$$$$  /$$$$$$$/$$$$$$  /$$ /$$$$$$ /$$$$$$$       | $$  \ $$ /$$$$$$  /$$$$$$$ /$$$$$$| $$/$$    /$$/$$$$$$  /$$$$$$ 
+| $$$$| $$  | $| $$__  $$/$$_____|_  $$_/ | $$/$$__  $| $$__  $$      | $$$$$$$//$$__  $$/$$_____//$$__  $| $|  $$  /$$/$$__  $$/$$__  $$
+| $$__| $$  | $| $$  \ $| $$       | $$   | $| $$  \ $| $$  \ $$      | $$__  $| $$$$$$$|  $$$$$$| $$  \ $| $$\  $$/$$| $$$$$$$| $$  \__/
+| $$  | $$  | $| $$  | $| $$       | $$ /$| $| $$  | $| $$  | $$      | $$  \ $| $$_____/\____  $| $$  | $| $$ \  $$$/| $$_____| $$      
+| $$  |  $$$$$$| $$  | $|  $$$$$$$ |  $$$$| $|  $$$$$$| $$  | $$      | $$  | $|  $$$$$$$/$$$$$$$|  $$$$$$| $$  \  $/ |  $$$$$$| $$      
+|__/   \______/|__/  |__/\_______/  \___/ |__/\______/|__/  |__/      |__/  |__/\_______|_______/ \______/|__/   \_/   \_______|__/                                                                                                                                           
+"""
+)
+print("-----------------------------------------------------------------------------------------------------------------------------------------\n")
 print("non siamo matematici ma abbiamo provato a fare un calcolatore di equazioni (potrebbe non funzionare con alcuni valori)")
 print("Questo programma non funziona con la radice quadrata e equazioni maggiori di 2° grado")
-print(dom[2][1])  # print 2
-print(len(dom))   # print 4
 while True:
     print("\n\t0: uscita dal programma\n\t1: calcolo equazione\n\t2: calcolo equazione razionale fratta.")
     choice = int(input("Inserire valore per scegliere opzione: "))
