@@ -1,5 +1,5 @@
 from equationcontrols import equation_resolver
-from functiontype.check_sign import get_existance, print_existance
+from functiontype.check_sign import get_existance, print_existance, print_sign
 
 dominio = [0]
 num = [0]

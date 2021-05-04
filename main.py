@@ -1,7 +1,7 @@
 from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
-import functiontype
-import equationcontrols
+# import functiontype
+# import equationcontrols
 
 dom = [1,2,[3,2],[2]]
 print("non siamo matematici ma abbiamo provato a fare un calcolatore di equazioni (potrebbe non funzionare con alcuni valori)")
