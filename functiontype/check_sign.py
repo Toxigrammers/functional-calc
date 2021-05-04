@@ -8,45 +8,49 @@
 # x1 = 3
 # [3;+∞]
 # [3;9999]
-from equationcontrols import equation_resolver
+from equationcontrols.equation_resolver import solve_equation, check_degree
 
-x1 = x2 = 0
-parable_sign = '+'
-
-def print_value(equ):
+def print_existance(equ):
     val = get_existance(equ)
     if len(val) == 4:
-        print('[-∞; {}] V [{}; +∞]'.format(x1,x2))
+        print('[-∞; {}] V [{}; +∞]'.format(val[1],val[2]))
     else:
-        if check_degree == 1:
-            print('[{}; +∞]'.format(x1))
+        if check_degree(equ) == 1:
+            print('[{}; +∞]'.format(val[0]))
         else:
-            print('[{}; {}]'.format(x1,x2))
+            print('[{}; {}]'.format(val[0],val[1]))
 
 def assign_value(equ):
     sol = solve_equation(equ)
     if check_degree(equ) == 1:
-        x1 = sol[0]
+        return sol[0]
     else:
-        x1 = sol[0]
-        x2 = sol[1]
+        parable_sign = '+'
         if equ[0] == '-':
             parable_sign = '-'
+        return sol[0], sol[1], parable_sign
 
-def first_degree_values():
+def first_degree_values(equ):
+    x1 = assign_value(equ)
     val = [x1,9999]
     return val
 
-def second_degree_values():
-    if parable_sign == '+':
-        val = [[-9999,x1],[x2,9999]]
+def second_degree_values(equ):
+    x1,x2,parab = assign_value(equ)
+    if x1 > x2:
+        if parab == '+':
+            val = [-9999,x2,x1,9999]
+        else:
+            val = [x2,x1]
     else:
-        val = [x1,x2]
+        if parab == '+':
+            val = [-9999,x1,x2,9999]
+        else:
+            val = [x1,x2]
     return val
 
 def get_existance(equ):
-    assign_value(equ)
     if check_degree(equ) == 1:
-        return first_degree_values()
+        return first_degree_values(equ)
     else:
-        return second_degree_values()
+        return second_degree_values(equ)

@@ -1,6 +1,18 @@
 import math
 from equationcontrols.separate_values import separate_second_degree, separate_first_degree
 
+def print_value(equ):
+    n = solve_equation(equ)
+    if check_degree(equ) == 1:
+        print("\nIl valore di x è "+str(n[0]))
+    else:
+        if n != False:
+            if n[0] == n[1]:
+                print("\nI valori di x1 e x2 sono "+str(n[0]))
+            else:
+                print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n[0],n[1]))
+
+
 def first_degree(equ):
     a,b = separate_first_degree(equ)
     x = (-b)/a
