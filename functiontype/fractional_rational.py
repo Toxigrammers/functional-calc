@@ -1,5 +1,4 @@
-from equationcontrols import separateValues
-
+from equationcontrols import equation_resolver
 dominio = [], num = [], den = []
 
 def domain(x2):
@@ -18,10 +17,7 @@ def domain(x2):
 def numerator(x1):
     print("\nCalcolo numeratore:")
     sol = solve_equation(x1)
-    check = True
-    if sol == False: # Impossibile
-        print("Calcolo Impossibile")
-    else:
+    if sol != False: 
         num = sol
         print("Valori del numeratore:")
         for i in range(len(num)):
@@ -30,10 +26,7 @@ def numerator(x1):
 def denominator(x2):
     print("\nCalcolo denominatore:")
     sol = solve_equation(x2)
-    check = True
-    if sol == False: # Impossibile
-        print("Calcolo Impossibile")
-    else:
+    if sol != False:
         den = sol
         print("Valori del denominatore:")
         for i in range(len(den)):

@@ -5,8 +5,8 @@ def first_degree(equ):
     a,b = separate_first_degree(equ)
     x = (-b)/a
     n = [x]
-    return n
-
+    return n 
+    
 def second_degree(equ):
     a,b,c = separate_second_degree(equ)
     if check_delta(a,b,c):

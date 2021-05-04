@@ -2,7 +2,9 @@ from equationcontrols.equation_resolver import solve_equation
 import functiontype
 import equationcontrols
 
+dom = [1,2,[3,4],[2]]
 print("Questo programma non funziona con la radice quadrata e equazioni maggiori di 2° grado")
+print(dom[2][1])  # print 4
 while True:
     print("\n\t0: uscita dal programma\n\t1: calcolo equazione\n\t2: calcolo equazione razionale fratta.")
     choice = int(input("Inserire valore per scegliere opzione: "))
