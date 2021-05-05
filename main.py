@@ -36,3 +36,4 @@ while True:
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
         rational_function(x1, x2)
+print("prova")
