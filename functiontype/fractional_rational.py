@@ -1,11 +1,6 @@
 from equationcontrols import equation_resolver
 from functiontype.check_sign import print_existance, print_sign
 
-dominio = [0]
-num = [0]
-den = [0]
-
-
 def domain(x2):
     print("\nCalcolo dominio:")
     sol = equation_resolver.solve_equation(x2)
@@ -13,9 +8,8 @@ def domain(x2):
     if not sol:  # Impossibile
         check = False
     else:
-        dominio = sol
         print("Valori del domino:")
-        for i in dominio:
+        for i in sol:
             print("\nx diverso da: " + str(i))
     return check
 

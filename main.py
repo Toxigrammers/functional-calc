@@ -3,7 +3,6 @@ from functiontype.check_sign import print_existance
 from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
 
-dom = [1, 2, [3, 2], [2]]
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
 | $$_____/                         | $$   |__/                        | $$__  $$                          | $$                           
