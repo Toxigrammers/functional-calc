@@ -1,14 +1,18 @@
-from kivy.app import App
-from kivy.uix.label import Label
+from kivy.uix.screenmanager import Screen
+from kivymd.app import MDApp
+from kivymd.uix.button import MDRectangleFlatButton
 
-class MainApp(App):
+
+class MainApp(MDApp):
     def build(self):
-        label = Label(text='Hello from Kivy',
-                      size_hint=(.5, .5),
-                      pos_hint={'center_x': .5, 'center_y': .5})
+        screen = Screen()
+        screen.add_widget(
+            MDRectangleFlatButton(
+                text="Hello, World",
+                pos_hint={"center_x": 0.5, "center_y": 0.5},
+            )
+        )
+        return screen
+        
 
-        return label
-
-if __name__ == '__main__':
-    app = MainApp()
-    app.run()
+MainApp().run()
