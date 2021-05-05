@@ -23,6 +23,7 @@ while True:
     choice = int(input("Inserire valore per scegliere opzione: "))
     if choice == 0:
         break
+    
     if choice == 1:
         print("\nNon usare spazi e usa lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
         equ = input("Inserire equazione: ")
