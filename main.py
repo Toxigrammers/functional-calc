@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from functiontype.check_sign import print_existance
 from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
 
@@ -29,11 +30,14 @@ while True:
         if sol:
             if len(sol) == 1:  # 1° grado
                 print("Il valore dell'equazione è:\nx = "+str(sol[0]))
+                print("Valori esistenza:")
+                print_existance(equ)
             else:             # 2° grado
                 print("I valori dell'equazione sono:\nx1 = {} \nx2 = {}".format(sol[0], sol[1]))
+                print("Valori esistenza:")
+                print_existance(equ)
     if choice == 2:
         print("\nNon usare spazi e usa lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
         rational_function(x1, x2)
-print("prova")
