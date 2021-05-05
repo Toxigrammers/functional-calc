@@ -15,8 +15,8 @@ def domain(x2):
     else:
         dominio = sol
         print("Valori del domino:")
-        for i in range(len(dominio)):
-            print("\nx diverso da: " + str(dominio[i]))
+        for i in dominio:
+            print("\nx diverso da: " + str(i))
     return check
 
 
@@ -42,5 +42,7 @@ def rational_function(x1, x2):
     # inserire funzioni controllo impossibile
     if domain(x2):  # se il dominio non è impossibile
         numerator(x1)
+        print_existance(x1)
         denominator(x2)
+        print_existance(x2)
         print_sign(x1, x2)
