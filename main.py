@@ -22,7 +22,6 @@ while True:
     choice = int(input("Inserire valore per scegliere opzione: "))
     if choice == 0:
         break
-    
     if choice == 1:
         print("\nInserire l'equazione in ordine di grado. Esempio: non -x +3x^2  ma  3x^2 -x")
         print("Non usare spazi e usa lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
