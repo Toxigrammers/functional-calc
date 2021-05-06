@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDRectangleFlatButton
-
+from kivy.uix.behaviors import ButtonBehavior
 
 box_numeratore = '''
 BoxLayout:
@@ -18,7 +18,6 @@ BoxLayout:
 box_denominatore = '''
 BoxLayout:
     padding: "10dp"
-
     MDTextField:
         id: numeratore
         hint_text: "inserisci il denominatore"
@@ -31,8 +30,9 @@ class MainApp(MDApp):
         screen = Screen()
         screen.add_widget(
             MDRectangleFlatButton(
-                text="Vaffanculo",
+                text="Press me!",
                 pos_hint={"center_x": 0.5, "center_y": 0.5},
+                on_press=self.event
             )
         ),
         numeratore = Builder.load_string(box_numeratore)
@@ -40,5 +40,6 @@ class MainApp(MDApp):
         screen.add_widget(numeratore)
         screen.add_widget(denominatore)
         return screen
-
+    def event(self, obj):
+        print("added event!")
 MainApp().run()
