@@ -1,3 +1,4 @@
+import kivy
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from styled_components import *
@@ -15,15 +16,16 @@ class MainApp(MDApp):
                 pos_hint={"center_x": 0.5, "center_y": 0.5},
                 on_release=self.event )
         )
-        self.numeratore = Builder.load_string(box_numeratore)
-        self.denominatore = Builder.load_string(box_denominatore)
-        screen.add_widget(self.numeratore)
-        screen.add_widget(self.denominatore)
+        self.numerator = Builder.load_string(box_numeratore)
+        self.denominator = Builder.load_string(box_denominatore)
+        screen.add_widget(self.numerator)
+        screen.add_widget(self.denominator)
         return screen
 
     def event(self,obj):
-        print(str(self.numeratore))
+        # numerator = self.numeratore.text
+        print(self.numerator.idstext)
         print("miao")
 
-
-MainApp().run()
+if __name__ == '__main__':
+    MainApp().run()
