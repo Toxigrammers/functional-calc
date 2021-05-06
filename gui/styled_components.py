@@ -1,4 +1,6 @@
 box_numeratore = '''
+BoxLayout:
+    padding: "10dp"
     MDTextField:
         id: numeratore
         hint_text: "inserisci il numeratore"
@@ -7,6 +9,8 @@ box_numeratore = '''
 '''
 
 box_denominatore = '''
+BoxLayout:
+    padding: "10dp"
     MDTextField:
         id: numeratore
         hint_text: "inserisci il denominatore"

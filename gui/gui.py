@@ -22,8 +22,7 @@ class MainApp(MDApp):
         return screen
 
     def event(self,obj):
-        # self.numeratore.text = str(self.numeratore)
-        # print(self.numeratore.text)
+        print(str(self.numeratore))
         print("miao")
 
 
