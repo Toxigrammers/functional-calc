@@ -48,7 +48,7 @@ ScreenManager:
 
     MDRectangleFlatButton:
         text:"Contiune"
-        on_release: app.Login()
+        on_release: app.login()
 
 
 
@@ -104,7 +104,6 @@ class RegisterScreen(Screen):
     pass
 
 
-# Create the screen manager
 sm = ScreenManager()
 sm.add_widget(MainScreen(name='main'))
 sm.add_widget(LoginScreen(name='login'))
@@ -112,15 +111,13 @@ sm.add_widget(RegisterScreen(name='register'))
 
 
 class DemoApp(MDApp):
-    
     def build(self):
         self.theme_cls.primary_palette = "Blue"
         self.theme_cls.primary_hue = "A700"
         self.screen = Builder.load_string(KV)
-
         return self.screen
 
-    def Login(self):
+    def login(self):
         login_screen = self.root.get_screen('login')
         print(login_screen.ids.email.text)
 
