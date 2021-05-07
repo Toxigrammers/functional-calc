@@ -10,15 +10,15 @@ ScreenManager:
 <MainScreen>:
     name: 'main'
     MDLabel:
-        text:"Çetele"
+        text:"Risolvi funzione"
         font_style:"H3"
         pos_hint:{'center_x':0.5,'center_y':0.94}
     MDRectangleFlatButton:
-        text: 'Giriş Yap'
+        text: 'Equazioni di secondo grado'
         pos_hint: {'center_x':0.5,'center_y':0.6}
         on_press: root.manager.current = 'login'
     MDRectangleFlatButton:
-        text: 'Kayıt Ol'
+        text: 'Funzioni razionali fratte'
         pos_hint: {'center_x':0.5,'center_y':0.5}
         on_press: root.manager.current = 'register'
     
@@ -26,7 +26,7 @@ ScreenManager:
     name: 'login'
     
     MDToolbar:
-        title:"Çetele Giriş Yap"
+        title:"Inserisci l'equazione"
         pos_hint: {'top':1}
 
     MDTextField:
