@@ -13,7 +13,6 @@ def print_value(equ):
             else:
                 print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n[0], n[1]))
 
-
 def first_degree(equ):
     a, b = separate_first_degree(equ)
     x = (-b) / a
@@ -23,7 +22,7 @@ def first_degree(equ):
 
 def second_degree(equ):
     a, b, c = separate_second_degree(equ)
-    if check_delta(a, b, c):
+    if check_delta(a, b, c):  # CAMBIARE CALCOLO EQUAZIONE DI SECONDO GRADO (es. x^2 -3)
         x1, x2 = equation(a, b, c)
         n = [x1, x2]
         return n
