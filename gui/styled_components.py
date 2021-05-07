@@ -1,5 +1,6 @@
 box_numeratore = '''
 BoxLayout:
+    id: porcodio
     padding: "10dp"
     MDTextField:
         id: numerator

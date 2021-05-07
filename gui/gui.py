@@ -1,31 +1,129 @@
-import kivy
 from kivymd.app import MDApp
-from kivy.lang import Builder
-from styled_components import *
-from kivymd.uix.screen import Screen
-from kivymd.uix.button import MDRectangleFlatButton
+from kivy.lang.builder import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
+
+KV = """
+ScreenManager:
+    MainScreen:
+    LoginScreen:
+    RegisterScreen:
+<MainScreen>:
+    name: 'main'
+    MDLabel:
+        text:"Çetele"
+        font_style:"H3"
+        pos_hint:{'center_x':0.5,'center_y':0.94}
+    MDRectangleFlatButton:
+        text: 'Giriş Yap'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.manager.current = 'login'
+    MDRectangleFlatButton:
+        text: 'Kayıt Ol'
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.manager.current = 'register'
+    
+<LoginScreen>:
+    name: 'login'
+    
+    MDToolbar:
+        title:"Çetele Giriş Yap"
+        pos_hint: {'top':1}
+
+    MDTextField:
+        id:email
+        size_hint_x:None
+        width:400
+        pos_hint:{'center_x':0.5,'center_y':0.6}
+        hint_text:"E-Mail"
+        helper_text: "E-Mail"
+
+    MDTextField:
+        name:"password"
+        size_hint_x:None
+        width:400
+        pos_hint:{'center_x':0.5,'center_y':0.5}
+        hint_text:"Şifre"
+        helper_text: "E-Mail"
 
 
-class MainApp(MDApp):
+    MDRectangleFlatButton:
+        text:"Contiune"
+        on_release: app.Login()
+
+
+
+    MDIconButton:
+        icon: 'arrow-left'
+        pos_hint: {'center_x':0.09,'center_y':0.1}
+        on_press: root.manager.current = 'main'
+        
+
+
+
+
+
+<RegisterScreen>:
+    name: 'register'
+    MDToolbar:
+        title:"Çetele - Kayıt ol"
+        pos_hint:{'top':1}
+    MDTextField:
+        name:"email"
+        size_hint_x:None
+        width:400
+        pos_hint:{'center_x':0.5,'center_y':0.6}
+        hint_text:"E-Mail"
+        helper_text: "E-Mail"
+
+    MDTextField:
+        name:"password"
+        size_hint_x:None
+        width:400
+        pos_hint:{'center_x':0.5,'center_y':0.5}
+        hint_text:"Şifre"
+        helper_text: "E-Mail"
+
+
+    MDIconButton:
+        icon: 'arrow-left'
+        pos_hint: {'center_x':0.09,'center_y':0.1}
+        on_press: root.manager.current = 'main'
+        
+"""
+
+
+class MainScreen(Screen):
+    pass
+
+
+class LoginScreen(Screen):
+    pass
+
+
+class RegisterScreen(Screen):
+    pass
+
+
+# Create the screen manager
+sm = ScreenManager()
+sm.add_widget(MainScreen(name='main'))
+sm.add_widget(LoginScreen(name='login'))
+sm.add_widget(RegisterScreen(name='register'))
+
+
+class DemoApp(MDApp):
+    
     def build(self):
-        screen = Screen()
-        self.theme_cls.primary_palette = "Green"
-        screen.add_widget (
-            MDRectangleFlatButton (
-                text="Press me!",
-                pos_hint={"center_x": 0.5, "center_y": 0.5},
-                on_release=self.event )
-        )
-        self.numerator = Builder.load_string(box_numeratore)
-        self.denominator = Builder.load_string(box_denominatore)
-        screen.add_widget(self.numerator)
-        screen.add_widget(self.denominator)
-        return screen
+        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.primary_hue = "A700"
+        self.screen = Builder.load_string(KV)
 
-    def event(self,obj):
-        # numerator = self.numeratore.text
-        print(self.numerator.idstext)
-        print("miao")
+        return self.screen
 
+    def Login(self):
+        login_screen = self.root.get_screen('login')
+        print(login_screen.ids.email.text)
+
+    
 if __name__ == '__main__':
-    MainApp().run()
+    DemoApp().run()
