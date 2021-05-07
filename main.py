@@ -1,6 +1,4 @@
-#!/usr/bin/python3
 from functiontype.check_sign import print_existance
-from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
 
 print("""
@@ -22,8 +20,7 @@ while True:
     if choice == 0:
         break
     if choice == 1:
-        print("\nInserire l'equazione in ordine di grado. Esempio: non -x +3x^2  ma  3x^2 -x")
-        print("Non usare spazi e usa lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
+        print("\nUsare lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
         equ = input("Inserire equazione: ")
         sol = solve_equation(equ)
         if sol:
@@ -33,11 +30,12 @@ while True:
                 print_existance(equ)
             else:             # 2° grado
                 print("I valori dell'equazione sono:\nx1 = {} \nx2 = {}".format(sol[0], sol[1]))
-                print("Valori esistenza:")
-                print_existance(equ)
+                # DA MIGLIORARE RISOLUZIONE DI EQUAZIONI COME x^2 -3
+            print("Esistenza equazione:")
+            print_existance(equ)
     if choice == 2:
-        print("\nInserire l'equazione in ordine di grado. Esempio: non -x +3x^2  ma  3x^2 -x")
-        print("Non usare spazi e usa lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
+        print("\nUsare lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
         rational_function(x1, x2)
+        # DA SISTEMARE CALCOLO NUM = x-1, DEN = x^2 -4x +4
