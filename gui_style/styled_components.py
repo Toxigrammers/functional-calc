@@ -1,7 +1,3 @@
-from kivymd.app import MDApp
-from kivy.lang.builder import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
-
 KV = """
 ScreenManager:
     MainScreen:
@@ -40,7 +36,7 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_release: app.login()
+        on_release: app.show_alert_dialog()
 
     MDIconButton:
         icon: 'arrow-left'
@@ -79,37 +75,3 @@ ScreenManager:
         on_press: root.manager.current = 'main'
         
 """
-
-
-class MainScreen(Screen):
-    pass
-
-
-class LoginScreen(Screen):
-    pass
-
-
-class RegisterScreen(Screen):
-    pass
-
-
-sm = ScreenManager()
-sm.add_widget(MainScreen(name='main'))
-sm.add_widget(LoginScreen(name='login'))
-sm.add_widget(RegisterScreen(name='register'))
-
-
-class DemoApp(MDApp):
-    def build(self):
-        self.theme_cls.primary_palette = "Blue"
-        self.theme_cls.primary_hue = "A700"
-        self.screen = Builder.load_string(KV)
-        return self.screen
-
-    def login(self):
-        login_screen = self.root.get_screen('login')
-        print(login_screen.ids.email.text)
-
-    
-if __name__ == '__main__':
-    DemoApp().run()

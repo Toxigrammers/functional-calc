@@ -1,7 +1,7 @@
 from functiontype.check_sign import print_existance
 from equationcontrols.equation_resolver import solve_equation
 from functiontype.fractional_rational import rational_function
-
+# from gui.gui import start_gui
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
 | $$_____/                         | $$   |__/                        | $$__  $$                          | $$                           
@@ -16,6 +16,9 @@ print("-------------------------------------------------------------------------
 print("non siamo matematici ma abbiamo provato a fare un calcolatore di funzioni (potrebbe non funzionare con alcuni valori)")
 print("Questo programma non funziona con la radice quadrata e equazioni maggiori di 2° grado")
 while True:
+    # gui = int(input("1: cli\t2: gui"))
+    # if gui == 2:
+    #     start_gui()
     print("\n\t0: uscita dal programma\n\t1: calcolo equazione\n\t2: calcolo equazione razionale fratta.")
     choice = int(input("Inserire valore per scegliere opzione: "))
     if choice == 0:
