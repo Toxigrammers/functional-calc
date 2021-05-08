@@ -1,7 +1,7 @@
 from kivymd.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-
+from equationcontrols.equation_resolver import solve_equation
 KV = """
 ScreenManager:
     MainScreen:
@@ -110,6 +110,5 @@ class DemoApp(MDApp):
         login_screen = self.root.get_screen('login')
         print(login_screen.ids.email.text)
 
-    
 if __name__ == '__main__':
     DemoApp().run()
