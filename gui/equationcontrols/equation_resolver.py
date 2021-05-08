@@ -25,7 +25,7 @@ def second_degree(equ):
     if check_delta(a, b, c):  # CAMBIARE CALCOLO EQUAZIONE DI SECONDO GRADO (es. x^2 -3)
         x1, x2 = equation(a, b, c)
         n = [x1, x2]
-        return n
+        return str(n)
     else:
         print("\nCalcolo impossibile")
         return False

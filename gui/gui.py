@@ -1,7 +1,8 @@
 from kivymd.app import MDApp
 from kivy.lang.builder import Builder
+from kivymd.uix.dialog import MDDialog
 from kivy.uix.screenmanager import ScreenManager, Screen
-from equationcontrols.equation_resolver import solve_equation
+from equationcontrols.equation_resolver import *
 KV = """
 ScreenManager:
     MainScreen:
@@ -40,7 +41,7 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_release: app.login()
+        on_release: app.show_alert_dialog()
 
     MDIconButton:
         icon: 'arrow-left'
@@ -100,15 +101,24 @@ sm.add_widget(RegisterScreen(name='register'))
 
 
 class DemoApp(MDApp):
+    dialog = None 
+
     def build(self):
-        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
         self.screen = Builder.load_string(KV)
         return self.screen
 
-    def login(self):
-        login_screen = self.root.get_screen('login')
-        print(login_screen.ids.email.text)
+    def show_alert_dialog(self):
+        equation = self.root.get_screen('login')
+        equ = str(equation.ids.email.text)
+        sol = solve_equation(equ)
+        if not self.dialog:
+            self.dialog = MDDialog(
+                text=sol,
+            )
+        self.dialog.open()
+        
 
 if __name__ == '__main__':
     DemoApp().run()
