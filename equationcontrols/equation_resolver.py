@@ -17,7 +17,7 @@ def first_degree(equ):
     a, b = separate_first_degree(equ)
     x = (-b) / a
     n = [x]
-    return n
+    return str(n)
 
 
 def second_degree(equ):
