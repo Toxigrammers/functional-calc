@@ -1,5 +1,5 @@
 import math
-from equationcontrols.separate_values import separate_second_degree, separate_first_degree
+from equation_controls.separate_values import separate_second_degree, separate_first_degree
 
 
 def print_value(equ):

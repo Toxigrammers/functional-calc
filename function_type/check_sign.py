@@ -1,4 +1,4 @@
-from equationcontrols.equation_resolver import solve_equation, check_degree
+from equation_controls.equation_resolver import solve_equation, check_degree
 
 
 def print_existance(equ):
