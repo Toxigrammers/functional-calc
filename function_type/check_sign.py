@@ -3,7 +3,11 @@ from equation_controls.equation_resolver import solve_equation, check_degree
 
 def print_existance(equ):
     val = get_existance(equ)
-    if len(val) == 4:
+    if val == '+':
+        print("All positive")
+    elif val == '-':
+        print("All negative")
+    elif len(val) == 4:
         print("[-∞; {}] V [{}; +∞]".format(val[1], val[2]))
     else:
         if check_degree(equ) == 1:
@@ -46,9 +50,9 @@ def second_degree_values(equ):
     x1, x2, parab = assign_value(equ)
     if x1 == x2:
         if equ[0] == '-':
-            val = [-9999, x1]  # [-∞; n]
+            val = '-'  # tutto negativo
         else:
-            val = [x1, 9999]   # [n; +∞]
+            val = '+'   # tutto positive
     else:
         if x1 > x2:
             if parab == '+':
@@ -73,7 +77,13 @@ def get_sign(equ, all):
     exist = get_existance(equ)
     print("Testando esistenza : "+str(exist))
     sign = []
-    if exist[1] == 9999:    # [x; +∞]
+    if exist == '+':
+        for i in range(len(all)+1):
+            sign.append('+')
+    elif exist == '-':
+        for i in range(len(all)+1):
+            sign.append('-')
+    elif exist[1] == 9999:    # [x; +∞]
         pos = all.index(exist[0]) # find position of value in solution list
         for i in range(len(all)+1):
             if i <= pos: # if index is less than the value position append '-' else append '+'
