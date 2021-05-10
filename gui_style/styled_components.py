@@ -1,13 +1,8 @@
 KV = """
 ScreenManager:
     MainScreen:
-<<<<<<< Updated upstream
-    EquazioniSecondo:
-    RazionaliFratte:
-=======
     EquationResolver:
     FunctionResolver:
->>>>>>> Stashed changes
 <MainScreen>:
     name: 'main'
     MDLabel:
@@ -17,16 +12,6 @@ ScreenManager:
     MDRectangleFlatButton:
         text: 'Equazioni di secondo grado'
         pos_hint: {'center_x':0.5,'center_y':0.6}
-<<<<<<< Updated upstream
-        on_press: root.manager.current = 'equazione'
-    MDRectangleFlatButton:
-        text: 'Funzioni razionali fratte'
-        pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_press: root.manager.current = 'funzioni'
-    
-<EquazioniSecondo>:
-    name: 'equazione'
-=======
         on_press: root.manager.current = 'equation'
     MDRectangleFlatButton:
         text: 'Funzioni razionali fratte'
@@ -35,7 +20,6 @@ ScreenManager:
     
 <EquationResolver>:
     name: 'equation'
->>>>>>> Stashed changes
     
     MDToolbar:
         title:"Inserisci l'equazione"
@@ -59,13 +43,8 @@ ScreenManager:
         pos_hint: {'center_x':0.09,'center_y':0.1}
         on_press: root.manager.current = 'main'
 
-<<<<<<< Updated upstream
-<RazionaliFratte>:
-    name: 'fuzioni'
-=======
 <FunctionResolver>:
     name: 'function'
->>>>>>> Stashed changes
     MDToolbar:
         title:"Inserisci la funzione razionale fratta"
         pos_hint:{'top':1}
