@@ -4,24 +4,24 @@ from kivymd.uix.dialog import MDDialog
 from gui_style.styled_components import *
 from equation_controls.equation_resolver import *
 from kivy.uix.screenmanager import ScreenManager, Screen
-
+from function_type.fractional_rational import rational_function
 
 class MainScreen(Screen):
     pass
 
 
-class LoginScreen(Screen):
+class EquationResolver(Screen):
     pass
 
 
-class RegisterScreen(Screen):
+class FunctionResolver(Screen):
     pass
 
 
 sm = ScreenManager()
 sm.add_widget(MainScreen(name='main'))
-sm.add_widget(LoginScreen(name='login'))
-sm.add_widget(RegisterScreen(name='register'))
+sm.add_widget(EquationResolver(name='equation'))
+sm.add_widget(FunctionResolver(name='function'))
 
 
 class DemoApp(MDApp):
@@ -34,15 +34,21 @@ class DemoApp(MDApp):
         return self.screen
 
     def show_alert_dialog(self):
-        equation = self.root.get_screen('login')
+        equation = self.root.get_screen('equation')
         equ = str(equation.ids.email.text)
         sol = solve_equation(equ)
         if not self.dialog:
             self.dialog = MDDialog(
-                text=sol,
+                text=str(sol),
             )
         self.dialog.open()
-        
 
+    def resolve_functional_rational(self):
+        equation = self.root.get_screen('function')
+        
+    def get_function_result(self):
+        x1 = self.root.get_screen('numeratore')
+        x2 = self.root.get_screen('denominator')
+        rational_function(x1, x2)
 if __name__ == '__main__':
     DemoApp().run()

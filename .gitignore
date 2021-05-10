@@ -1,5 +1,5 @@
-equationcontrols/__pycache__
-functiontype/__pycache__
-gui_style/__pycache__
+equation_controls/__pycache__/
+function_type/__pycache__/
+gui_style/__pycache__/
 run.sh
 .idea

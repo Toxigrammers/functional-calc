@@ -1,6 +1,6 @@
-from functiontype.check_sign import print_existance
-from equationcontrols.equation_resolver import solve_equation
-from functiontype.fractional_rational import rational_function
+from function_type.check_sign import print_existance
+from equation_controls.equation_resolver import solve_equation
+from function_type.fractional_rational import rational_function
 # from gui.gui import start_gui
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
@@ -42,4 +42,18 @@ while True:
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
         rational_function(x1, x2)
-        # DA SISTEMARE CALCOLO NUM = x-1, DEN = x^2 -4x +4
+    if choice == 3: # TEST
+        chc = input("\nVuoi inserire radice(1) o calcolarla(2)")
+        num = input("\nInserire valore da controllare: ")
+        start = 0
+        if chc == "2":
+            sqr = math.sqrt(num)
+            print("\nRadice di "+str(num)+" = "+str(sqr))
+        else:
+            while True:
+                sqr = math.sqrt(start)
+                print("\nCheck valore {} = sqrt({})".format(start, sqr))
+                if sqr == num or start == 10:
+                    break
+                start += 1
+            print("\n"+str(num)+" = radice quadrata di "+str(start))

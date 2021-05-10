@@ -1,8 +1,8 @@
 KV = """
 ScreenManager:
     MainScreen:
-    LoginScreen:
-    RegisterScreen:
+    EquationResolver:
+    FunctionResolver:
 <MainScreen>:
     name: 'main'
     MDLabel:
@@ -12,21 +12,21 @@ ScreenManager:
     MDRectangleFlatButton:
         text: 'Equazioni di secondo grado'
         pos_hint: {'center_x':0.5,'center_y':0.6}
-        on_press: root.manager.current = 'login'
+        on_press: root.manager.current = 'equation'
     MDRectangleFlatButton:
         text: 'Funzioni razionali fratte'
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_press: root.manager.current = 'register'
+        on_press: root.manager.current = 'function'
     
-<LoginScreen>:
-    name: 'login'
+<EquationResolver>:
+    name: 'equation'
     
     MDToolbar:
         title:"Inserisci l'equazione"
         pos_hint: {'top':1}
 
     MDTextField:
-        id:email
+        id:equazione
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.6}
@@ -36,20 +36,20 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_release: app.show_alert_dialog()
+        on_release: app.get_equation_result()
 
     MDIconButton:
         icon: 'arrow-left'
         pos_hint: {'center_x':0.09,'center_y':0.1}
         on_press: root.manager.current = 'main'
 
-<RegisterScreen>:
-    name: 'register'
+<FunctionResolver>:
+    name: 'function'
     MDToolbar:
         title:"Inserisci la funzione razionale fratta"
         pos_hint:{'top':1}
     MDTextField:
-        name:"email"
+        name:"numeratore"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.6}
@@ -57,7 +57,7 @@ ScreenManager:
         helper_text: "Numeratore"
 
     MDTextField:
-        name:"password"
+        name:"denominatore"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.5}
@@ -67,11 +67,10 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.4}
-        on_release: app.login()
+        on_release: app.resolve_second_grade_equation()
 
     MDIconButton:
         icon: 'arrow-left'
         pos_hint: {'center_x':0.09,'center_y':0.1}
-        on_press: root.manager.current = 'main'
-        
+        on_press: root.manager.current = 'main'   
 """
