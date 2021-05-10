@@ -1,7 +1,6 @@
-import math
-from functiontype.check_sign import print_existance
-from equationcontrols.equation_resolver import solve_equation
-from functiontype.fractional_rational import rational_function
+from function_type.check_sign import print_existance
+from equation_controls.equation_resolver import solve_equation
+from function_type.fractional_rational import rational_function
 # from gui.gui import start_gui
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
