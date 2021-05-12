@@ -10,18 +10,18 @@ class MainScreen(Screen):
     pass
 
 
-class EquazioniSecondo(Screen):
+class EquationResolver(Screen):
     pass
 
 
-class RazionaliFratte(Screen):
+class FunctionResolver(Screen):
     pass
 
 
 sm = ScreenManager()
 sm.add_widget(MainScreen(name='main'))
-sm.add_widget(EquazioniSecondo(name='login'))
-sm.add_widget(RazionaliFratte(name='register'))
+sm.add_widget(EquationResolver(name='equation'))
+sm.add_widget(FunctionResolver(name='function'))
 
 
 class DemoApp(MDApp):
@@ -33,15 +33,18 @@ class DemoApp(MDApp):
         self.screen = Builder.load_string(KV)
         return self.screen
 
-    def get_equation_result(self):
-        equation = self.root.get_screen('login')
-        equ = str(equazione.ids.equazione.text)
+    def show_alert_dialog(self):
+        equation = self.root.get_screen('equation')
+        equ = str(equation.ids.email.text)
         sol = solve_equation(equ)
         if not self.dialog:
             self.dialog = MDDialog(
                 text=str(sol),
             )
         self.dialog.open()
+
+    def resolve_functional_rational(self):
+        equation = self.root.get_screen('function')
         
     def get_function_result(self):
         x1 = self.root.get_screen('numeratore')

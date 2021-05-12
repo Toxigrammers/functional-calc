@@ -31,14 +31,14 @@ def second_degree(equ):
         return False
 
 
-def check_degree(equ):  # check equation degree
-    if 'x^2' in equ:
-        n = 2
-    elif 'x' in equ:
-        n = 1
-    else:
-        n = 0
-    return n
+# def check_degree(equ):  # check equation degree
+#     if 'x^2' in equ:
+#         n = 2
+#     elif 'x' in equ:
+#         n = 1
+#     else:
+#         n = 0
+#     return n
 
 
 def check_delta(a, b, c):  # check if delta is less than 0
@@ -58,7 +58,7 @@ def equation(a, b, c):
 
 
 def solve_equation(equ):
-    if check_degree(equ) == 1:
-        return first_degree(equ)
-    elif check_degree(equ) == 2:
+    # if check_degree(equ) == 1:
+    #     return first_degree(equ)
+    # elif check_degree(equ) == 2:
         return second_degree(equ)
