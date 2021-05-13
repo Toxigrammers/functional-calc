@@ -1,7 +1,8 @@
 from function_type.check_sign import print_existance
-from equation_controls.equation_resolver import solve_equation
+from equation_controls.equation_resolver import solve_equation, print_value
 from function_type.fractional_rational import rational_function
 # from gui.gui import start_gui
+
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
 | $$_____/                         | $$   |__/                        | $$__  $$                          | $$                           
@@ -10,9 +11,9 @@ print("""
 | $$__| $$  | $| $$  \ $| $$       | $$   | $| $$  \ $| $$  \ $$      | $$__  $| $$$$$$$|  $$$$$$| $$  \ $| $$\  $$/$$| $$$$$$$| $$  \__/
 | $$  | $$  | $| $$  | $| $$       | $$ /$| $| $$  | $| $$  | $$      | $$  \ $| $$_____/\____  $| $$  | $| $$ \  $$$/| $$_____| $$      
 | $$  |  $$$$$$| $$  | $|  $$$$$$$ |  $$$$| $|  $$$$$$| $$  | $$      | $$  | $|  $$$$$$$/$$$$$$$|  $$$$$$| $$  \  $/ |  $$$$$$| $$      
-|__/   \______/|__/  |__/\_______/  \___/ |__/\______/|__/  |__/      |__/  |__/\_______|_______/ \______/|__/   \_/   \_______|__/                                                                                                                                           
+|__/   \______/|__/  |__/\_______/  \___/ |__/\______/|__/  |__/      |__/  |__/\_______|_______/ \______/|__/   \_/   \_______|__/   
+-----------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                        
 """ )
-print("-----------------------------------------------------------------------------------------------------------------------------------------\n")
 print("non siamo matematici ma abbiamo provato a fare un calcolatore di funzioni (potrebbe non funzionare con alcuni valori)")
 print("Questo programma non funziona con la radice quadrata e equazioni maggiori di 2° grado")
 while True:
@@ -28,13 +29,7 @@ while True:
         equ = input("Inserire equazione: ")
         sol = solve_equation(equ)
         if sol:
-            if len(sol) == 1:  # 1° grado
-                print("Il valore dell'equazione è:\nx = "+str(sol[0]))
-                print("Valori esistenza:")
-                print_existance(equ)
-            else:             # 2° grado
-                print("I valori dell'equazione sono:\nx1 = {} \nx2 = {}".format(sol[0], sol[1]))
-                # DA MIGLIORARE RISOLUZIONE DI EQUAZIONI COME x^2 -3
+            print_value(equ)
             print("Esistenza equazione:")
             print_existance(equ)
     if choice == 2:
