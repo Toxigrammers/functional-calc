@@ -36,7 +36,7 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_release: app.get_equation_result()
+        on_release: app.show_alert_dialog()
 
     MDIconButton:
         icon: 'arrow-left'
