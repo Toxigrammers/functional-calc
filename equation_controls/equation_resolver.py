@@ -26,14 +26,23 @@ def print_value(equ):
                     print("\nI valori di x1 e x2 sono " + str(n[0]))
             else:
                 if check_if_sqrt(n[0]):
-                    n1_str = "+√" + str( round( pow(n[0], 2) ) )
+                    if n[0] < 0:
+                        n1_str = "-√" + str( round( pow(n[0], 2) ) )
+                    else:
+                        n1_str = "√" + str( round( pow(n[0], 2) ) )
                 else:
                     n1_str = n[0]
                 if check_if_sqrt(n[1]):
-                    n2_str = "-√" + str( round( pow(n[1], 2) ) )
+                    if n[1] < 0:
+                        n2_str = "-√" + str( round( pow(n[1], 2) ) )
+                    else:
+                        n2_str = "√" + str( round( pow(n[1], 2) ) )
                 else:
                     n2_str = str(n[1])
-                print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n1_str, n2_str))
+                if check_if_sqrt(n[0]) and check_if_sqrt(n[1]):
+                    print("\nIl valore di x1 è {} oppure {}\nIl valore di x2 è {} oppure {}".format(n[0], n1_str, n[1], n2_str))
+                else:
+                    print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n1_str, n2_str))
 
 def first_degree(equ):
     a, b = separate_first_degree(equ)

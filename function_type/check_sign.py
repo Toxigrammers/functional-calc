@@ -1,12 +1,4 @@
-from equation_controls.equation_resolver import solve_equation, check_degree
-
-def check_if_sqrt(val):
-    val = val*10
-    string_val = str(val)
-    if string_val[len(string_val)-1] != "0":
-        return True
-    else:
-        return False
+from equation_controls.equation_resolver import solve_equation, check_degree, check_if_sqrt
 
 def print_existance(equ):
     val = get_existance(equ)
