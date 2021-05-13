@@ -2,6 +2,7 @@ from function_type.check_sign import print_existance
 from equation_controls.equation_resolver import solve_equation
 from function_type.fractional_rational import rational_function
 # from gui.gui import start_gui
+
 print("""
  /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
 | $$_____/                         | $$   |__/                        | $$__  $$                          | $$                           
@@ -10,9 +11,9 @@ print("""
 | $$__| $$  | $| $$  \ $| $$       | $$   | $| $$  \ $| $$  \ $$      | $$__  $| $$$$$$$|  $$$$$$| $$  \ $| $$\  $$/$$| $$$$$$$| $$  \__/
 | $$  | $$  | $| $$  | $| $$       | $$ /$| $| $$  | $| $$  | $$      | $$  \ $| $$_____/\____  $| $$  | $| $$ \  $$$/| $$_____| $$      
 | $$  |  $$$$$$| $$  | $|  $$$$$$$ |  $$$$| $|  $$$$$$| $$  | $$      | $$  | $|  $$$$$$$/$$$$$$$|  $$$$$$| $$  \  $/ |  $$$$$$| $$      
-|__/   \______/|__/  |__/\_______/  \___/ |__/\______/|__/  |__/      |__/  |__/\_______|_______/ \______/|__/   \_/   \_______|__/                                                                                                                                           
+|__/   \______/|__/  |__/\_______/  \___/ |__/\______/|__/  |__/      |__/  |__/\_______|_______/ \______/|__/   \_/   \_______|__/   
+-----------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                        
 """ )
-print("-----------------------------------------------------------------------------------------------------------------------------------------\n")
 print("non siamo matematici ma abbiamo provato a fare un calcolatore di funzioni (potrebbe non funzionare con alcuni valori)")
 print("Questo programma non funziona con la radice quadrata e equazioni maggiori di 2° grado")
 while True:
