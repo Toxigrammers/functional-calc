@@ -26,7 +26,7 @@ def denominator(x2):
     print("\nCalcolo denominatore:")
     sol = solve_equation(x2) # get equation solution
     if sol:
-        print_value(x2)
+        print_valuwe(x2)
         print("\nValori esistenza:")
         print_existance(x2)
 
