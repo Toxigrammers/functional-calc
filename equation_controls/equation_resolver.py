@@ -1,6 +1,13 @@
 import math
 from equation_controls.separate_values import separate_second_degree, separate_first_degree
 
+def check_if_sqrt(val):
+    val = val*10
+    string_val = str(val)
+    if string_val[len(string_val)-1] != "0":
+        return True
+    else:
+        return False
 
 def print_value(equ):
     n = solve_equation(equ)
@@ -9,9 +16,24 @@ def print_value(equ):
     else:
         if n:
             if n[0] == n[1]:
-                print("\nI valori di x1 e x2 sono " + str(n[0]))
+                if check_if_sqrt(n[0]):
+                    if n[0] < 0:
+                        n_str = "-√" + str( round( pow(n[0], 2) ) )
+                    else:
+                        n_str = "√" + str( round( pow(n[0], 2) ) )
+                    print("\nI valori di x1 e x2 sono " + str(n[0]) + " oppure " + n_str)
+                else:
+                    print("\nI valori di x1 e x2 sono " + str(n[0]))
             else:
-                print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n[0], n[1]))
+                if check_if_sqrt(n[0]):
+                    n1_str = "+√" + str( round( pow(n[0], 2) ) )
+                else:
+                    n1_str = n[0]
+                if check_if_sqrt(n[1]):
+                    n2_str = "-√" + str( round( pow(n[1], 2) ) )
+                else:
+                    n2_str = str(n[1])
+                print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n1_str, n2_str))
 
 def first_degree(equ):
     a, b = separate_first_degree(equ)
@@ -31,14 +53,14 @@ def second_degree(equ):
         return False
 
 
-# def check_degree(equ):  # check equation degree
-#     if 'x^2' in equ:
-#         n = 2
-#     elif 'x' in equ:
-#         n = 1
-#     else:
-#         n = 0
-#     return n
+def check_degree(equ):  # check equation degree
+    if 'x^2' in equ:
+        n = 2
+    elif 'x' in equ:
+        n = 1
+    else:
+        n = 0
+    return n
 
 
 def check_delta(a, b, c):  # check if delta is less than 0
@@ -58,7 +80,7 @@ def equation(a, b, c):
 
 
 def solve_equation(equ):
-    # if check_degree(equ) == 1:
-    #     return first_degree(equ)
-    # elif check_degree(equ) == 2:
+    if check_degree(equ) == 1:
+        return first_degree(equ)
+    elif check_degree(equ) == 2:
         return second_degree(equ)

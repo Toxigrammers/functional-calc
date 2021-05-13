@@ -1,5 +1,5 @@
 from equation_controls.equation_resolver import solve_equation, print_value
-from function_type.check_sign import print_existance, print_existance, check_sign
+from function_type.check_sign import print_existance, print_sign
 
 def domain(x2):
     print("\nCalcolo dominio:")

@@ -1,5 +1,12 @@
 from equation_controls.equation_resolver import solve_equation, check_degree
 
+def check_if_sqrt(val):
+    val = val*10
+    string_val = str(val)
+    if string_val[len(string_val)-1] != "0":
+        return True
+    else:
+        return False
 
 def print_existance(equ):
     val = get_existance(equ)
@@ -8,7 +15,23 @@ def print_existance(equ):
     elif val == '-':
         print("All negative")
     elif len(val) == 4:
-        print("[-∞; {}] V [{}; +∞]".format(val[1], val[2]))
+        n1 = val[1]
+        n2 = val[2]
+        if check_if_sqrt(n1):
+            if n1 < 0:
+                n1_str = "-√" + str( round( pow(n1, 2)))
+            else:
+                n1_str = "√" + str( round( pow(n1, 2)))
+        else:
+            n1_str = str(n1)
+        if check_if_sqrt(n2):
+            if n2 < 0:
+                n2_str = "-√" + str( round( pow(n2, 2)))
+            else:
+                n2_str = "√" + str( round( pow(n2, 2)))
+        else:
+            n2_str = str(n2)
+        print("[-∞; {}] V [{}; +∞]".format(n1_str, n2_str))
     else:
         if check_degree(equ) == 1:
             if equ[0] == "-":
@@ -19,11 +42,43 @@ def print_existance(equ):
             sol = solve_equation(equ)
             if sol[0] == sol[1]:
                 if equ[0] == "-":
-                    print("[-∞; {}]".format(val[1]))
+                    n = val[1]
+                    if check_if_sqrt(n):
+                        if sol[0] < 0:
+                            n_str = "-√" + str( round( pow(n, 2)))
+                        else:
+                            n_str = "√" + str( round( pow(n, 2)))
+                    else:
+                        n_str = str(n)
+                    print("[-∞; {}]".format(n_str))
                 else:
-                    print("[{}; +∞]".format(val[0]))
+                    n = val[0]
+                    if check_if_sqrt(n):
+                        if sol[0] < 0:
+                            n_str = "-√" + str( round( pow(n, 2)))
+                        else:
+                            n_str = "√" + str( round( pow(n, 2)))
+                    else:
+                        n_str = str(n)
+                    print("[{}; +∞]".format(n_str))
             else:
-                print("[{}; {}]".format(val[0], val[1]))
+                n1 = val[0]
+                if check_if_sqrt(n1):
+                    if n1 < 0:
+                        n1_str = "-√" + str( round( pow(n1, 2)))
+                    else:
+                        n1_str = "√" + str( round( pow(n1, 2)))
+                else:
+                    n1_str = str(n1)
+                n2 = val[1]
+                if check_if_sqrt(n2):
+                    if n2 < 0:
+                        n2_str = "-√" + str( round( pow(n2, 2)))
+                    else:
+                        n2_str = "√" + str( round( pow(n2, 2)))
+                else:
+                    n2_str = str(n2)
+                print("[{}; {}]".format(n1_str, n2_str))
 
 
 def assign_value(equ):
@@ -75,7 +130,6 @@ def get_existance(equ):
 
 def get_sign(equ, all):
     exist = get_existance(equ)
-    print("Testando esistenza : "+str(exist))
     sign = []
     if exist == '+':
         for i in range(len(all)+1):
@@ -147,31 +201,6 @@ def print_sign(num, den):
     num_sign = get_sign(num, all_sol)
     den_sign = get_sign(den, all_sol)
     all_sign = check_sign(num_sign, den_sign)
-    # print("   ")
-    # for i in all_sol:
-    #     print(str(i)+" ", end="")
-    # print("  ")
-    # for i in range(len(all_sign)):
-    #     print("-+", end="")
-    # print("-\nN ", end="")
-    # for i in range(len(num_sign)):
-    #     if i <= len(num_sign)-1:
-    #         print(str(num_sign[i])+"|", end="")
-    #     else:
-    #         print(num_sign[i], end="")
-    # print("   ")
-    # for i in range(len(all_sign)):
-    #     print("| ", end="")
-    # print("\nD ", end="")
-    # for i in range(len(den_sign)):
-    #     if i <= len(den_sign)-1:
-    #         print(str(den_sign[i])+"|", end="")
-    #     else:
-    #         print(den_sign[i], end="")
-    # print("\n ")
-    # for i in all_sign:
-    #     print(" "+str(i), end="")
-    # print()
     print("\nSegno numeratore:")
     print(num_sign)
     print("\nSegno denominatore:")
