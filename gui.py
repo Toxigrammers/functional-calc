@@ -6,6 +6,7 @@ from equation_controls.equation_resolver import *
 from kivy.uix.screenmanager import ScreenManager, Screen
 from function_type.fractional_rational import rational_function
 
+
 class MainScreen(Screen):
     pass
 
@@ -25,7 +26,7 @@ sm.add_widget(FunctionResolver(name='function'))
 
 
 class DemoApp(MDApp):
-    dialog = None 
+    dialog = None
 
     def build(self):
         self.theme_cls.primary_palette = "Red"
@@ -33,21 +34,21 @@ class DemoApp(MDApp):
         self.screen = Builder.load_string(KV)
         return self.screen
 
-    def show_alert_dialog(self):
-        equation = self.root.get_screen('equation')
-        equ = str(equation.ids.email.text)
-        sol = solve_equation(equ)
-        if not self.dialog:
-            self.dialog = MDDialog(
-                text=str(sol),
-            )
-        self.dialog.open()
+        def show_alert_dialog(self):
+            equation = self.root.get_screen('equation')
+            equ = str(equation.ids.email.text)
+            sol = solve_equation(equ)
+            if not self.dialog:
+                self.dialog = MDDialog(
+                    text=str(sol),
+                )
+            self.dialog.open()
 
     def resolve_functional_rational(self):
         equation = self.root.get_screen('function')
-        
+
     def get_function_result(self):
-        x1 = self.root.get_screen('numeratore')
+        x1 = self.root.get_screen('numerator')
         x2 = self.root.get_screen('denominator')
         rational_function(x1, x2)
 

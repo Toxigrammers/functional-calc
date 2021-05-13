@@ -49,7 +49,7 @@ ScreenManager:
         title:"Inserisci la funzione razionale fratta"
         pos_hint:{'top':1}
     MDTextField:
-        name:"numeratore"
+        name:"numerator"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.6}
@@ -57,7 +57,7 @@ ScreenManager:
         helper_text: "Numeratore"
 
     MDTextField:
-        name:"denominatore"
+        name:"denominator"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.5}
