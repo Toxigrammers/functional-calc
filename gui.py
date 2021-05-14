@@ -47,6 +47,12 @@ class DemoApp(MDApp):
                     text=str(sol),
                 )
             self.dialog.open()
+        else: 
+            if not self.dialog:
+                self.dialog = MDDialog(
+                    text="Calcolo impossibile",
+                )
+            self.dialog.open()
 
 """     def resolve_functional_rational(self):
         equation = self.root.get_screen('function')
