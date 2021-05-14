@@ -30,8 +30,7 @@ while True:
         sol = solve_equation(equ)
         if sol:
             print_value(equ)
-            print("Esistenza equa
-            zione:")
+            print("Esistenza equazione:")
             print_existance(equ)
     if choice == 2:
         print("\nUsare lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
