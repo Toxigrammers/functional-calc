@@ -11,25 +11,25 @@ def print_existance(equ):
         n2 = val[2]
         if check_if_sqrt(n1):
             if n1 < 0:
-                n1_str = "-√" + str( round( pow(n1, 2)))
+                n1_str = f"-√ {str( round( pow(n1, 2)))}"
             else:
-                n1_str = "√" + str( round( pow(n1, 2)))
+                n1_str = f"√ {str( round( pow(n1, 2)))}"
         else:
             n1_str = str(n1)
         if check_if_sqrt(n2):
             if n2 < 0:
-                n2_str = "-√" + str( round( pow(n2, 2)))
+                n2_str = f"-√ + {str( round( pow(n2, 2)))}"
             else:
                 n2_str = "√" + str( round( pow(n2, 2)))
         else:
             n2_str = str(n2)
-        print("[-∞; {}] V [{}; +∞]".format(n1_str, n2_str))
+        print(f"[-∞; {n1_str}] V [{n2_str}; +∞]")
     else:
         if check_degree(equ) == 1:
             if equ[0] == "-":
-                print("[-∞; {}]".format(val[1]))
+                print(f"[-∞; {val[1]}]")
             else:
-                print("[{}; +∞]".format(val[0]))
+                print(f"[{val[0]}; +∞]")
         else:
             sol = solve_equation(equ)
             if sol[0] == sol[1]:
@@ -37,40 +37,40 @@ def print_existance(equ):
                     n = val[1]
                     if check_if_sqrt(n):
                         if sol[0] < 0:
-                            n_str = "-√" + str( round( pow(n, 2)))
+                            n_str = f"-√ {str( round( pow(n, 2)))}"
                         else:
-                            n_str = "√" + str( round( pow(n, 2)))
+                            n_str = f"√ {str( round( pow(n, 2)))}"
                     else:
                         n_str = str(n)
-                    print("[-∞; {}]".format(n_str))
+                    print(f"[-∞; {n_str}]")
                 else:
                     n = val[0]
                     if check_if_sqrt(n):
                         if sol[0] < 0:
-                            n_str = "-√" + str( round( pow(n, 2)))
+                            n_str = f"-√ {str( round( pow(n, 2)))}"
                         else:
-                            n_str = "√" + str( round( pow(n, 2)))
+                            n_str = f"√ {str( round( pow(n, 2)))}"
                     else:
                         n_str = str(n)
-                    print("[{}; +∞]".format(n_str))
+                    print(f"[{n_str}; +∞]")
             else:
                 n1 = val[0]
                 if check_if_sqrt(n1):
                     if n1 < 0:
-                        n1_str = "-√" + str( round( pow(n1, 2)))
+                        n1_str = f"-√ + {str( round( pow(n1, 2)))}"
                     else:
-                        n1_str = "√" + str( round( pow(n1, 2)))
+                        n1_str = f"√ + {str( round( pow(n1, 2)))}"
                 else:
                     n1_str = str(n1)
                 n2 = val[1]
                 if check_if_sqrt(n2):
                     if n2 < 0:
-                        n2_str = "-√" + str( round( pow(n2, 2)))
+                        n2_str =  f"-√ + {str( round( pow(n2, 2)))}"
                     else:
-                        n2_str = "√" + str( round( pow(n2, 2)))
+                        n2_str =  f"√ + {str( round( pow(n2, 2)))}"
                 else:
                     n2_str = str(n2)
-                print("[{}; {}]".format(n1_str, n2_str))
+                print(f"[{n1_str}; {n2_str}]")
 
 
 def assign_value(equ):
@@ -81,7 +81,10 @@ def assign_value(equ):
         parable_sign = '+'
         if equ[0] == '-':
             parable_sign = '-'
-        return sol[0], sol[1], parable_sign
+        if sol:
+            return sol[0], sol[1], parable_sign
+        else: 
+            print("calcolo impossibile")
 
 
 def first_degree_values(equ):

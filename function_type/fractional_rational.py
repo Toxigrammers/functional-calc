@@ -9,7 +9,7 @@ def domain(x2):
     else:
         print("Valori del domino:")
         for i in sol:
-            print("\nx diverso da: " + str(i))
+            print(f"\nx diverso da: {str(i)}")
         return True
 
 

@@ -5,14 +5,17 @@ ScreenManager:
     FunctionResolver:
 <MainScreen>:
     name: 'main'
+
     MDLabel:
         text:"Risolvi funzione"
         font_style:"H3"
         pos_hint:{'center_x':0.5,'center_y':0.94}
+    
     MDRectangleFlatButton:
         text: 'Equazioni di secondo grado'
         pos_hint: {'center_x':0.5,'center_y':0.6}
         on_press: root.manager.current = 'equation'
+    
     MDRectangleFlatButton:
         text: 'Funzioni razionali fratte'
         pos_hint: {'center_x':0.5,'center_y':0.5}
@@ -26,7 +29,7 @@ ScreenManager:
         pos_hint: {'top':1}
 
     MDTextField:
-        id:equazione
+        id:equation
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.6}
@@ -36,7 +39,7 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.5}
-        on_release: app.get_equation_result()
+        on_press: app.show_alert_dialog()
 
     MDIconButton:
         icon: 'arrow-left'
@@ -45,11 +48,13 @@ ScreenManager:
 
 <FunctionResolver>:
     name: 'function'
+
     MDToolbar:
         title:"Inserisci la funzione razionale fratta"
         pos_hint:{'top':1}
+
     MDTextField:
-        name:"numeratore"
+        name:"numerator"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.6}
@@ -57,7 +62,7 @@ ScreenManager:
         helper_text: "Numeratore"
 
     MDTextField:
-        name:"denominatore"
+        name:"denominator"
         size_hint_x:None
         width:400
         pos_hint:{'center_x':0.5,'center_y':0.5}
@@ -67,7 +72,7 @@ ScreenManager:
     MDRectangleFlatButton:
         text:"Risolvi"
         pos_hint: {'center_x':0.5,'center_y':0.4}
-        on_release: app.resolve_second_grade_equation()
+        on_press: app.resolve_second_grade_equation()
 
     MDIconButton:
         icon: 'arrow-left'

@@ -43,12 +43,12 @@ while True:
         start = 0
         if chc == "2":
             sqr = math.sqrt(num)
-            print("\nRadice di "+str(num)+" = "+str(sqr))
+            print(f"\nRadice di {str(num)} = {str(sqr)}")
         else:
             while True:
                 sqr = math.sqrt(start)
-                print("\nCheck valore {} = sqrt({})".format(start, sqr))
+                print(f"\nCheck valore {start} = sqrt({sqr})")
                 if sqr == num or start == 10:
                     break
                 start += 1
-            print("\n"+str(num)+" = radice quadrata di "+str(start))
+            print(f"\n{str(num)}= radice quadrata di {str(start)}")

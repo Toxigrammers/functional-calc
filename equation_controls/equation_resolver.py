@@ -40,9 +40,9 @@ def print_value(equ):
                 else:
                     n2_str = str(n[1])
                 if check_if_sqrt(n[0]) and check_if_sqrt(n[1]):
-                    print("\nIl valore di x1 è {} oppure {}\nIl valore di x2 è {} oppure {}".format(n[0], n1_str, n[1], n2_str))
+                    print(f"\nIl valore di x1 è {n[0]} oppure {n1_str}\nIl valore di x2 è {n[1]} oppure {n2_str}")
                 else:
-                    print("\nIl valore di x1 è {}\nIl valore di x2 è {}".format(n1_str, n2_str))
+                    print(f"\nIl valore di x1 è {n1_str}\nIl valore di x2 è {n2_str}")
 
 def first_degree(equ):
     a, b = separate_first_degree(equ)
