@@ -18,9 +18,9 @@ def print_existance(equ):
             n1_str = str(n1)
         if check_if_sqrt(n2):
             if n2 < 0:
-                n2_str = f"-√ + {str( round( pow(n2, 2)))}"
+                n2_str = f"-√ {str( round( pow(n2, 2)))}"
             else:
-                n2_str = "√" + str( round( pow(n2, 2)))
+                n2_str = f"√ {str( round( pow(n2, 2)))}"
         else:
             n2_str = str(n2)
         print(f"[-∞; {n1_str}] V [{n2_str}; +∞]")

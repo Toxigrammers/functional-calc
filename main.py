@@ -30,25 +30,11 @@ while True:
         sol = solve_equation(equ)
         if sol:
             print_value(equ)
-            print("Esistenza equazione:")
+            print("Esistenza equa
+            zione:")
             print_existance(equ)
     if choice == 2:
         print("\nUsare lo spazio per separare i valori\nEsempio di equazione: -x^2 +3x -2")
         x1 = input("Inserire numeratore: ")
         x2 = input("Inserire il denominatore: ")
         rational_function(x1, x2)
-    if choice == 3: # TEST
-        chc = input("\nVuoi inserire radice(1) o calcolarla(2)")
-        num = input("\nInserire valore da controllare: ")
-        start = 0
-        if chc == "2":
-            sqr = math.sqrt(num)
-            print(f"\nRadice di {str(num)} = {str(sqr)}")
-        else:
-            while True:
-                sqr = math.sqrt(start)
-                print(f"\nCheck valore {start} = sqrt({sqr})")
-                if sqr == num or start == 10:
-                    break
-                start += 1
-            print(f"\n{str(num)}= radice quadrata di {str(start)}")
