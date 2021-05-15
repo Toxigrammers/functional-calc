@@ -55,7 +55,7 @@ class DemoApp(MDApp):
             self.dialog.open()
 
 """     def resolve_functional_rational(self):
-        equation = self.root.get_screen('function')
+            equation = self.root.get_screen('function')
 
     def get_function_result(self):
         x1 = self.root.get_screen('numerator')
