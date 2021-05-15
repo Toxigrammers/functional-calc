@@ -20,7 +20,12 @@ ScreenManager:
         text: 'Funzioni razionali fratte'
         pos_hint: {'center_x':0.5,'center_y':0.5}
         on_press: root.manager.current = 'function'
-    
+
+    MDRectangleFlatButton:
+        text: 'Vai alla cli'
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        on_press: app.goto_cli()
+
 <EquationResolver>:
     name: 'equation'
     
