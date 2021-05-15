@@ -1,10 +1,17 @@
 from kivymd.app import MDApp
+# from kivy.app import AppK
+from kivy.core.window import Window
+# from kivy.base import stopTouchApp  
 from kivy.lang.builder import Builder
+from kivy.core.window import Window
 from kivymd.uix.dialog import MDDialog
 from gui_style.styled_components import *
 from equation_controls.equation_resolver import *
 from kivy.uix.screenmanager import ScreenManager, Screen
 from function_type.fractional_rational import rational_function
+from cli import run_cli
+
+Window.size = (500, 500)
 
 
 class MainScreen(Screen):
@@ -54,8 +61,13 @@ class DemoApp(MDApp):
                 )
             self.dialog.open()
 
+
+    def goto_cli(self):
+        run_cli()
+        DemoApp().Stop()
+
 """     def resolve_functional_rational(self):
-        equation = self.root.get_screen('function')
+            equation = self.root.get_screen('function')
 
     def get_function_result(self):
         x1 = self.root.get_screen('numerator')

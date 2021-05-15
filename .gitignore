@@ -1,5 +1,3 @@
-equation_controls/__pycache__/
-function_type/__pycache__/
-gui_style/__pycache__/
+__pycache__/
 run.sh
 .idea
