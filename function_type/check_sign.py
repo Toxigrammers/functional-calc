@@ -117,7 +117,7 @@ def second_degree_values(equ):
     return val
 
 
-def get_existance(equ):
+def  get_existance(equ):
     if check_degree(equ) == 1:
         return first_degree_values(equ)
     else:
@@ -132,6 +132,14 @@ def get_sign(equ, all):
     elif exist == '-':
         for i in range(len(all)+1):
             sign.append('-')
+    if len(exist) == 4: # [-∞; x1]V[x2;+∞]
+        pos1 = all.index(exist[1]) # find positions of values in solution list
+        pos2 = all.index(exist[2])
+        for i in range(len(all)+1):
+            if i <= pos1 or i > pos2: # if index is not between the two values position append '+' else append '-'
+                sign.append('+')
+            else:
+                sign.append('-')
     elif exist[1] == 9999:    # [x; +∞]
         pos = all.index(exist[0]) # find position of value in solution list
         for i in range(len(all)+1):
@@ -143,14 +151,6 @@ def get_sign(equ, all):
         pos = all.index(exist[1]) # find position of value in solution list
         for i in range(len(all)+1):
             if i <= pos: # if index is less than the value position append '+' else append '-'
-                sign.append('+')
-            else:
-                sign.append('-')
-    elif len(exist) == 4: # [-∞; x1]V[x2;+∞]
-        pos1 = all.index(exist[1]) # find positions of values in solution list
-        pos2 = all.index(exist[2])
-        for i in range(len(all)+1):
-            if i <= pos1 or i > pos2: # if index is not between the two values position append '+' else append '-'
                 sign.append('+')
             else:
                 sign.append('-')
@@ -175,10 +175,7 @@ def check_sign(sign1, sign2):
             sign.append('+')
     return sign
 
-
-def print_sign(num, den):
-    num_exist = get_existance(num)
-    den_exist = get_existance(den)
+def get_all_solution(num, den):
     num_sol = solve_equation(num)
     den_sol = solve_equation(den)
     all_sol = []
@@ -191,14 +188,21 @@ def print_sign(num, den):
     for i in num_sol:
         all_sol.append(i)
     for i in den_sol:
-        all_sol.append(i)
+        if i not in num_sol:
+            all_sol.append(i)
     all_sol.sort()   # sort all values
+    return all_sol
+    
+def get_all_sign(num, den):
+    all_sol = get_all_solution(num, den)
     num_sign = get_sign(num, all_sol)
     den_sign = get_sign(den, all_sol)
-    all_sign = check_sign(num_sign, den_sign)
+    return check_sign(num_sign, den_sign)
+
+def print_sign(num, den):
     print("\nSegno numeratore:")
-    print(num_sign)
+    print(get_sign (num, get_all_solution(num, den)))
     print("\nSegno denominatore:")
-    print(den_sign)
+    print(get_sign (den, get_all_solution(num, den)))
     print("\nSegni equazione: ")
-    print(all_sign)
+    print(get_all_sign(num, den))
