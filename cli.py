@@ -1,6 +1,6 @@
 from function_type.check_sign import print_existance
 from equation_controls.equation_resolver import solve_equation, print_value
-from function_type.fractional_rational import rational_function
+from function_type.fractional_rational import rational_function, gui_return_values
 # from gui import run_gui
 def run_cli():
     print("""
@@ -38,3 +38,12 @@ def run_cli():
             x1 = input("Inserire numeratore: ")
             x2 = input("Inserire il denominatore: ")
             rational_function(x1, x2)
+        if choice == 3:
+            x1 = input("Inserire numeratore: ")
+            x2 = input("Inserire denominatore: ")
+            gui = gui_return_values(x1, x2)
+            gui_items = gui.items()
+            for item in gui_items:
+                print(item)
+
+run_cli()

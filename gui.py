@@ -74,6 +74,6 @@ class DemoApp(MDApp):
         x2 = self.root.get_screen('denominator')
         rational_function(x1, x2) """
 
-
+        
 if __name__ == '__main__':
     DemoApp().run()
