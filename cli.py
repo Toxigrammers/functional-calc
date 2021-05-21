@@ -2,6 +2,7 @@ from function_type.check_sign import print_existance
 from equation_controls.equation_resolver import solve_equation, print_value
 from function_type.fractional_rational import rational_function, gui_return_values
 # from gui import run_gui
+
 def run_cli():
     print("""
     /$$$$$$$$                          /$$    /$$                         /$$$$$$$                            /$$                           
