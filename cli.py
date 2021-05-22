@@ -46,5 +46,6 @@ def run_cli():
             gui_items = gui.items()
             for item in gui_items:
                 print(item)
-
-run_cli()
+                
+if __name__ == '__main__':
+    run_cli()
